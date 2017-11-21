@@ -1,30 +1,20 @@
 <?php 
 require '../src/core/init.php';
 
-use Repositories\UserRepository;
-use Entities\UserWithPass;
-
-$userRepository = new UserRepository();
-// var_dump($userRepository);
-
-$userwp = new UserWithPass();
-$userwp->username = 'ramil';
-$userwp->email = 'ramil@ramil.ru';
-$userwp->password = 'ramilramil';
-
-$userwp2 = new UserWithPass();
-$userwp2->username = 'ramilupdate';
-$userwp2->email = 'ramil@ramil.ru';
-
-$userRepository->add($userwp);
-
-// $userRepository->update($userwp, $userwp2);
-
-// $userRepository->delete($userwp2);
 
 
-$userRepository->getAll();
+header("Content-type: image/png");
+$string = 'ddddd';
 
+$im = imagecreatetruecolor(200, 100);
+$bg = imagecolorallocate($im, 255, 255, 255);
+imagefill($im, 0, 0, $bg);
+$color = imagecolorallocate($im, 0 , 0, 0);
+$px     = (imagesx($im) - 19 * strlen($string)) / 2;
+// imagestring($im, 3, $px, 40, $string, $color);
+imagefttext($im, 45, -2, $px, 65, $color, 'css/CorkiRegular.ttf', $string);
+imagejpeg($im, 'img/captcha/1.jpg');
+imagedestroy($im);
 
 
 

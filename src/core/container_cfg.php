@@ -55,3 +55,9 @@ $container['HelloController'] = function ($c) {
 $container['TwitterController'] = function ($c) {
 	return new Controllers\TwitterController();
 };
+$container['UploadController'] = function ($c) {
+	return new Controllers\UploadController();
+};
+$container['CaptchaController'] = function ($c) {
+	return new Controllers\CaptchaController();
+};

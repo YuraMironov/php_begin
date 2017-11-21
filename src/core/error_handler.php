@@ -36,6 +36,6 @@ function myErrorHandler($errno, $errstr, $errfile, $errline)
 			break;
 	}
 }
-$oldErrorHandler = set_error_handler('myErrorHandler');
+// $oldErrorHandler = set_error_handler('myErrorHandler');
 // class_exists(dhdjhd);
-$a = 1 / 0;
+// $a = 1 / 0;
