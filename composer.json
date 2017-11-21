@@ -1,0 +1,26 @@
+{
+    "name": "yura/pro.php",
+    "authors": [
+        {
+            "name": "Yuriy Mironov",
+            "email": "jura96_@mail.ru"
+        }
+    ],
+    "require": {
+    	"paragraph1/php-fcm": "^0.7.0",
+        "symfony/http-foundation": "^3.3",
+        "pimple/pimple": "^3.2",
+        "twig/twig": "^1.35"
+    },
+    "autoload":{
+    	"psr-4":{
+            "Utils\\" : "src/utils",
+            "Interfaces\\" : "src/interfaces",
+    		"Models\\": "src/models",
+            "Controllers\\" : "src/controllers",
+            "Core\\" : "src/core",
+            "Repositories\\" : "src/repositories",
+            "Entities\\" : "src/entities"
+    	}
+    }
+}

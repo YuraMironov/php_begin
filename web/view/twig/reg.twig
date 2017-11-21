@@ -1,0 +1,24 @@
+{% include 'header.twig' %}
+    <form method="post">
+        {% if  cookies['suc_reg'] == true %}
+            <label class="success">Регистрация пройдена успешно</label><br><label><a href="/login">login</a><br></label>
+        {% else %}
+            {% if session['success'] is not null and session['success'] == false %}
+                <label class="error">Регистрация не пройдена<br>
+                {% if session['errPass'] is not null and session['errPass'] == false   %}
+                    Неправильный пароль<br>
+                {% endif %}
+                </label>
+            {% endif %}
+        {% endif %}
+        <label>Имя пользователя:</label>
+        <input type="text" minlength="5" name="name" placeholder="Ваше имя" value="{{session['name']}}" required/>
+        <label>E-mail пользователя</label>
+        <input type="email" name="email" placeholder="Электронная почта" value="{{session['email']}}" required/>
+        <label>Пароль:</label>
+        <input type="password" name="password" placeholder="Ваш пароль" required/>
+        <label>Проверка пароля:</label>
+        <input type="password" name="password2" placeholder="Ваш пароль" required/>
+        <button type="submit"> Отправить</button>
+    </form>
+{% include 'footer.twig' %}

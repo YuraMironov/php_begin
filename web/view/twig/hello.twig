@@ -1,0 +1,8 @@
+{% include 'header.twig' %}
+<h1>Hello</h1>
+<ul>
+    {% for user in 1..count %}
+        <li>Hello, {{ word|e }}!</li>
+    {% endfor %}
+</ul>
+{% include 'footer.twig' %}
