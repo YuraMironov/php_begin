@@ -10,9 +10,9 @@ use Entities\User;
 
 class TwitterController implements ControllerInterface
 {
-	public function doGet($get_params)
+	public function doGet($uri)
 	{
-		$get_params = parse_str($get_params, $_GET);
+		$uri = parse_str($uri, $_GET);
 		// Пример использования класса:
 		if (!empty($_GET['denied'])) {
 		    // Пользователь отменил авторизацию.

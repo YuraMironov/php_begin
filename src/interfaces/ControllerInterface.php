@@ -3,6 +3,6 @@ namespace Interfaces;
 
 interface ControllerInterface
 {
-	public function doGet($get_params);
+	public function doGet($uri);
 	public function doPost($post_params);
 }

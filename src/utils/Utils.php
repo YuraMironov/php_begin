@@ -44,6 +44,7 @@ class Utils
             imageline($im, rand(0, $width), 0, rand(0,$width), $width, $color);
             imageline($im, 0, rand(0, $height), $width, rand(0, $height), $color);
         }
+        srand ((float)microtime()*1000000);
         imagefilter($im, IMG_FILTER_EMBOSS);
         $path = 'img/captcha/' . self::generateCode() . '.jpg';
         imagejpeg($im, $path);

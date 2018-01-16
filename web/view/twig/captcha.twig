@@ -1,9 +1,12 @@
 {% include 'header.twig' %}
 
+{% if message is not null and message != '' %}
+	<div class='message'>{{message}}</div>
+{% endif %}
 <form method='post'>
-	<img src='{{src}}' id='capthca'>
+	<img src='{{src}}' height='80px' id='capthca'>
 	<a href='/captcha'>reload</a>
-	<input type='text'/>
+	<input name='check' type='text'/>
 	<button type='submit'>send</button>
 </form>
 

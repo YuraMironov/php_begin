@@ -8,7 +8,7 @@ use Utils\Utils;
 
 class LogoutController implements ControllerInterface
 {
-	public function doGet($get_params)
+	public function doGet($uri)
 	{
 		unset($_SESSION['user']);
 		Utils::redirect('/login');

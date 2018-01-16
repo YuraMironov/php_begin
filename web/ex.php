@@ -1,31 +1,21 @@
 <?php 
 require '../src/core/init.php';
 
+$url = "http://php.pro/upload";
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result = curl_exec($ch);
+curl_close ($ch);
+
+function get_html_title($str){
+    if(strlen($str)>0){
+        preg_match("/\<title\>(.*)\<\/title\>/i",$str,$title);
+        return $title[1];
+    }
+}
+
+var_dump(get_html_title($result));
 
 
-header("Content-type: image/png");
-$string = 'ddddd';
-
-$im = imagecreatetruecolor(200, 100);
-$bg = imagecolorallocate($im, 255, 255, 255);
-imagefill($im, 0, 0, $bg);
-$color = imagecolorallocate($im, 0 , 0, 0);
-$px     = (imagesx($im) - 19 * strlen($string)) / 2;
-// imagestring($im, 3, $px, 40, $string, $color);
-imagefttext($im, 45, -2, $px, 65, $color, 'css/CorkiRegular.ttf', $string);
-imagejpeg($im, 'img/captcha/1.jpg');
-imagedestroy($im);
-
-
-
-// use Model\SingletonCat;
-
-// // echo "<pre>";
-// $cat = SingletonCat::getCat();
-// $cat->setVoice("mrrrrrr");
-// $catf = SingletonCat::getCat();
-
-// $cat->setVoice("rrrrr");
-// var_dump($cat->getVoice(), $catf->getVoice());
-
-
+echo serialize(new DateTime());

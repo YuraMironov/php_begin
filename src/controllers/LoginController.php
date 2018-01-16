@@ -19,7 +19,7 @@ class LoginController extends TemplaterController implements ControllerInterface
 		$this->setUserRepository($userRepository);
 	}
 
-	public function doGet($get_params)
+	public function doGet($uri)
 	{	
 		if (empty($_SESSION['user'])) {
 			return $this->getTemplaterParams();	

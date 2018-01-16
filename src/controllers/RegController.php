@@ -19,7 +19,7 @@ class RegController extends TemplaterController implements ControllerInterface
 		$this->setUserRepository($userRepository);
 	}
 
-	public function doGet($get_params)
+	public function doGet($uri)
 	{	
 		return $this->getTemplaterParams();
 	}

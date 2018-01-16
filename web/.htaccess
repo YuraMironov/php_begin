@@ -3,7 +3,7 @@ ErrorDocument 404 /err404
 
 RewriteEngine On
 
-RewriteRule ^$ index.php 
+RewriteRule ^$ index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^err404$ 404.php
 RewriteRule ^([a-zA-Z]{1,})([a-zA-Z0-9/]*)$ app.php

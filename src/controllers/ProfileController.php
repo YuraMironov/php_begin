@@ -13,7 +13,7 @@ class ProfileController extends TemplaterController implements ControllerInterfa
 	{
 		$this->addTemplaterParam('pageName', 'Profile page');
 	}
-	public function doGet($get_params)
+	public function doGet($uri)
 	{
 		if (isset($_SESSION['user'])) {
 			return $this->getTemplaterParams();

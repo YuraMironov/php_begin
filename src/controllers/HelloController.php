@@ -11,9 +11,9 @@ class HelloController extends TemplaterController implements ControllerInterface
 	public function __construct(){
 		$this->addTemplaterParam('pageName', "Hello page");
 	}
-	public function doGet($get_params)
+	public function doGet($uri)
 	{	
-		$params = explode('/', $get_params);
+		$params = explode('/', $uri);
 		if ($params[1] >= 1) {
 			$this->addTemplaterParam('word', $params[0]);
 			$this->addTemplaterParam('count', $params[1]);
